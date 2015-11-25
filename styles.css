@@ -1,9 +1,26 @@
 .navbar-inverse .navbar-brand{
 	color: #fff;
 }
+canvas{ 
+	
+	border: 1px solid black; 
+}
+#canvas {
+	display: block;
+	padding: 0;
+	margin: 0 auto;
+	background: white;
+}
 
 body{
-	background-color: #FFF;
+	background: rgba(0,192,196,1);
+	background: -moz-linear-gradient(left, rgba(0,192,196,1) 0%, rgba(0,195,131,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,192,196,1)), color-stop(100%, rgba(0,195,131,1)));
+	background: -webkit-linear-gradient(left, rgba(0,192,196,1) 0%, rgba(0,195,131,1) 100%);
+	background: -o-linear-gradient(left, rgba(0,192,196,1) 0%, rgba(0,195,131,1) 100%);
+	background: -ms-linear-gradient(left, rgba(0,192,196,1) 0%, rgba(0,195,131,1) 100%);
+	background: linear-gradient(to right, rgba(0,192,196,1) 0%, rgba(0,195,131,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c0c4', endColorstr='#00c383', GradientType=1 );
 }
 
 
@@ -22,13 +39,4 @@ body{
 
 }
 
-canvas{ 
-	
-	border: 1px solid black; 
-}
-#canvas {
-	display: block;
-	padding: 0;
-	margin: 0 auto;
-	background-color:black;
-}
+
