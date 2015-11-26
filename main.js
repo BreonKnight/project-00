@@ -18,24 +18,34 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e){
-	if(e.keyCode == 39){
+	if(e.keyCode == 83){
 		rightPressed = true;
 	}
-	else if(e.keyCode == 37){
+	else if(e.keyCode == 65){
 		leftPressed = true;
 	}
 }
 
 function keyUpHandler(e){
-	if(e.keyCode == 39){
+	if(e.keyCode == 83){
 		rightPressed = false;
 	}
-	else if(e.keyCode == 37){
+	else if(e.keyCode == 65){
 		leftPressed = false
 	}
 }
 
-function drawBox(){
+function finishLine(){
+	ctx.beginPath();
+	ctx.moveTo(600,0);
+	ctx.lineTo(600,400);
+	ctx.fill();
+	ctx.closePath();
+	ctx.stroke();
+
+}
+
+function drawPaddle(){
 	ctx.beginPath();
 	ctx.rect(boxX, canvas.height-boxHeight, boxWidth, boxHeight);
 	ctx.fillStyle = "#0095DD";
@@ -47,7 +57,8 @@ function drawBox(){
 function draw(){
 	//clears rectangle before each move
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	drawBox();
+	finishLine();
+	drawPaddle();
 
     if(rightPressed && boxX < canvas.width-boxWidth) {
         boxX += 7;
