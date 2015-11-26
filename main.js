@@ -1,39 +1,64 @@
 console.log('Sanity Check: JS is working!');
 $(document).ready(function(){
 
-
+//getting canvas from ID in the canvas class and turning it into a JS variable.
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-
-var x = 0;
-var y = 400;
+var x = canvas.width2;
+var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
+var boxHeight = 10;
+var boxWidth = 75;
+var boxX = (canvas.width-boxWidth)/60;
+var rightPressed = false;
+var leftPressed = false;
+
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(e){
+	if(e.keyCode == 39){
+		rightPressed = true;
+	}
+	else if(e.keyCode == 37){
+		leftPressed = true;
+	}
+}
+
+function keyUpHandler(e){
+	if(e.keyCode == 39){
+		rightPressed = false;
+	}
+	else if(e.keyCode == 37){
+		leftPressed = false
+	}
+}
+
+function drawBox(){
+	ctx.beginPath();
+	ctx.rect(boxX, canvas.height-boxHeight, boxWidth, boxHeight);
+	ctx.fillStyle = "#0095DD";
+	ctx.fill();
+	ctx.closePath();
+}
 
 
 function draw(){
 	//clears rectangle before each move
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	//drawng code
-	// x y width height
-	//x moves left and right
-	//y moves up and down 
-	//width of sqaure and height of it
-	ctx.beginPath();
-	ctx.rect(x,y,22,12);
-	//filling color
-	ctx.fillStyle = "blue";
-	ctx.fill();
-	ctx.closePath(); 
-	x += dx;
+	drawBox();
+
+    if(rightPressed && boxX < canvas.width-boxWidth) {
+        boxX += 7;
+    }
+    else if(leftPressed && boxX > 0) {
+        boxX -= 7;
+    }
+    
+    x += dx;
     y += dy;
-}
+ }
 setInterval(draw,10);
 
 });
-
-
-
-	// ctx.beginPath();
-
-
