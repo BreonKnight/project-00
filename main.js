@@ -45,7 +45,7 @@ function finishLine(){
 
 }
 
-function drawPaddle(){
+function drawBox(){
 	ctx.beginPath();
 	ctx.rect(boxX, canvas.height-boxHeight, boxWidth, boxHeight);
 	ctx.fillStyle = "#0095DD";
@@ -58,7 +58,7 @@ function draw(){
 	//clears rectangle before each move
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	finishLine();
-	drawPaddle();
+	drawBox();
 
     if(rightPressed && boxX < canvas.width-boxWidth) {
         boxX += 7;
