@@ -130,7 +130,7 @@ $(document).ready(function(){
 	var players = [];
 
 	players.push(new Player("#00ff00", 65, 83));
-	players.push(new Player("#0000ff", 90, 88));
+	players.push(new Player("#0000ff", 75, 76));
 
 	function draw(){
 		window.requestAnimationFrame(draw);
