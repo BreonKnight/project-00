@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Racing XTREME</title>
+	<!-- StyleSheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower' rel='stylesheet' type='text/css'>
+	<!-- Custom Styles -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- Vendor Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- app scripts -->
+    <script src="main.js">
+    </script>
+</head>
+<body>
+	<!-- Begining of Header area. -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+        		<img alt="Xtreme" src="">
+        	</a>
+		</div>
+			<button type="button" class="btn btn-danger navbar-btn pull-right" id ="restart">Reset</button>
+		</div>
+		
+	</nav>
+	<!-- End of Header area. -->
+	<!-- Game Canvas -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class-"col-md-12">
+					<canvas id="canvas" width="700" height="400"></canvas>
+				</div>	
+			</div>
+			<div class="row winsrow">
+				<div class="col-md-6" id="p1">
+				</div>
+				<div class="col-md-6" id="p2">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="grad">Player One Controls: Left = A Right = S <br></p>
+					<p class="grad">Player Two Controls: Left = K Right = L <br></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<audio controls autoplay loop class="center-block" id="musicbox">
+						<source src="music/bonusstage.mp3" type="audio/mpeg">
+					</audio>
+				</div>
+			</div>
+		</div>
+
+	<!-- End Of Canvas -->
+	<!-- Begining of Footer -->
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted pull-left"> XTREME the most interactive game of 2015 </p>
+		</div>
+	</footer>
+	<!-- End of Footer -->
+</body>
+</html>
